@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ToDoContext } from '../contexts/ToDoContext';
 
-function ToDoDetails({ item, removeToDo }) {
+function ToDoDetails({ item }) {
+    
+    const { removeToDo } = useContext(ToDoContext);
 
     function handleDelete() {
         removeToDo(item.id);

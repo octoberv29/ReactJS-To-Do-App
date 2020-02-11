@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import { ToDoContext } from '../contexts/ToDoContext';
 
-function AddToDo({ addToDo }) {
+function AddToDo() {
 
     const [title, setTitle] = useState('');
+    const { addToDo } = useContext(ToDoContext);
 
     function handleChange(event) {
         const value = event.target.value;
-        console.log(value);
         setTitle(value);
     }
 

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ToDoDetails from './ToDoDetails';
+import { ToDoContext } from '../contexts/ToDoContext';
 
-function ToDoList( {items, removeToDo} ) {
+function ToDoList() {
 
-    const showToDos = items.slice(0).reverse().map((item) => (<ToDoDetails key={item.id} item={item} removeToDo={removeToDo} />));
+    const { items } = useContext(ToDoContext);
+
+    const showToDos = items.slice(0).reverse().map((item) => (<ToDoDetails key={item.id} item={item} />));
 
     return (  
         <div>
